@@ -2,7 +2,8 @@
 # (example 3.1 of section 3.1)  : Exploring data : Using summary statistics to spot problems 
 # Title: The summary() command 
 
-setwd("PDSwR2/Custdata")                                               	# Note: 1 
+getwd()
+setwd("C:/Users/kvasg/Documents/My_R_Projects/PDSwR2/Custdata")         # Note: 1 
 customer_data = readRDS("custdata.RDS")
 summary(customer_data)
 ##     custid              sex        is_employed       income       	# Note: 2 
