@@ -5,6 +5,6 @@ iris_copy <- iris
 iris_copy$mean_Petal.Length <- ave(iris$Petal.Length, iris$Species, FUN = mean)
 iris_copy$mean_Petal.Width <- ave(iris$Petal.Width, iris$Species, FUN = mean)
 
-# head(iris_copy)
-# tail(iris_copy)
+head(iris_copy)
+tail(iris_copy)
 

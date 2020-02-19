@@ -10,5 +10,5 @@ iris_dplyr <- iris %>%
          mean_Petal.Width = mean(Petal.Width)) %>%
   ungroup(.)
 
-# head(iris_dplyr)
+head(iris_dplyr)
 

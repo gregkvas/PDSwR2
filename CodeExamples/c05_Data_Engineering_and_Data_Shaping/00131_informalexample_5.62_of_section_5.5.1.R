@@ -3,7 +3,7 @@
 
 library("datasets")
 library("xts")
-
+View(Seatbelts)
 # move the date index into a column
 dates <- index(as.xts(time(Seatbelts)))
 Seatbelts <- data.frame(Seatbelts) 

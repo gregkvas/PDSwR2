@@ -10,5 +10,5 @@ iris_data.table[ ,
                       mean_Petal.Width = mean(Petal.Width)), 
                  by = "Species"]
 
-# print(iris_data.table)
+print(iris_data.table)
 

@@ -3,6 +3,10 @@
 
 library("data.table")
 
+# Note: Using ':=' leads to a per-group column calculation 'in-place',
+# that is inside of current data.table and therefore each row gets the
+# corresponding per-group calculation assigned
+
 dt <- as.data.table(rbind_base)
 grouping_column <- "table"
 dt[ , max_price := max(price), by = eval(grouping_column)]
@@ -19,3 +23,9 @@ print(dt)
 ## 7:        n2 33.99 productTable2     33.99
 ## 8:        n3 17.99 productTable2     33.99
 
+
+# Using '=' leads to a new data.table in summary table form
+
+dt2 <- dt[ , .(max_price = max(price)), by = grouping_column]
+
+print(dt2)
