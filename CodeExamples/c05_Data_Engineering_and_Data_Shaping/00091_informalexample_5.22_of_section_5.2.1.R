@@ -25,3 +25,19 @@ airquality %.>%                                    	# Note: 2
 #   Run all the steps as before using transform() and subset(), adding an extra step of filtering 
 #   down to rows that do not have missing Ozone values. 
 
+
+library(dplyr)
+
+airquality %>%    # Note: {magrittr} '%>%' pipe operator also works with these base-functions
+  transform(., date = dmy(datestr(Day, Month, 1973))) %>%
+  subset(., !is.na(Ozone), select =  c("Ozone", "date")) %>%
+  head(.)
+
+airquality %>%    # Note: {magrittr} '%>%' pipe operator also works with these base-functions
+  transform(date = dmy(datestr(Day, Month, 1973))) %>%
+  subset(!is.na(Ozone), select =  c("Ozone", "date")) %>%
+  head(.)
+
+
+
+
